@@ -15,7 +15,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
             background-color: #f4f7fa;
             font-family: Arial, sans-serif;
         }
@@ -24,7 +24,7 @@
             flex-direction: row;
             gap: 10px;
             width: 100%;
-            height: 90vh;
+            height: 85vh;
         }
         .left-frame {
             flex: 1;
@@ -80,13 +80,59 @@
         #onboardingFrame {
             display: none;
         }
+        
+        /* Estilos para el apartado de respaldos */
+        .respaldos-container {
+            width: 100%;
+            background-color: #fff;
+            padding: 15px 20px;
+            border-top: 2px solid #ddd;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .respaldos-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .respaldos-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #d32f2f;
+            margin-bottom: 8px;
+        }
+        .respaldos-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .respaldo-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+        .respaldo-link:hover {
+            background-color: #45a049;
+        }
+        .respaldo-link:nth-child(2) {
+            background-color: #2196F3;
+        }
+        .respaldo-link:nth-child(2):hover {
+            background-color: #0b7dda;
+        }
     </style>
 </head>
 <body>
     <div class="frame-container">
         <!-- Frame Izquierdo -->
         <iframe class="left-frame" src="https://sedsa.activehosted.com/f/496" title="Formulario Bienvenida"></iframe>
-
         <!-- Frame Derecho con submenú -->
         <div class="right-frame">
             <div id="submenu" class="submenu">
@@ -100,12 +146,28 @@
                     ONBOARDING DE ORIENTACION - ALUMNOS QUE NECESITAN UN TRATO ESPECIAL O ACUSAN NO SABER USAR EL SISTEMA
                 </button>
             </div>
-
             <!-- Iframe para cargar el link después de la selección -->
             <iframe id="onboardingFrame" title="Onboarding"></iframe>
         </div>
     </div>
-
+    
+    <!-- Apartado de Respaldos -->
+    <div class="respaldos-container">
+        <div class="respaldos-content">
+            <div class="respaldos-title">
+                ⚠️ ES RESPONSABILIDAD DE LA EJECUTIVA VELAR POR LA LLEGADA CORRECTA DE LOS DATOS DESPUÉS DE HECHO LOS FORMULARIOS
+            </div>
+            <div class="respaldos-links">
+                <a href="https://docs.google.com/spreadsheets/d/1rQTnbiXqjzdnrKVPDsfAvteQ0Swk8Pr2pKg48EiKx7Q/edit?gid=1834908987#gid=1834908987" target="_blank" class="respaldo-link">
+                    📊 RESPALDO BIENVENIDA
+                </a>
+                <a href="https://docs.google.com/spreadsheets/d/1rQTnbiXqjzdnrKVPDsfAvteQ0Swk8Pr2pKg48EiKx7Q/edit?gid=274774790#gid=274774790" target="_blank" class="respaldo-link">
+                    📋 RESPALDO ONBOARDING
+                </a>
+            </div>
+        </div>
+    </div>
+    
     <script>
         function cambiarOnboarding(url) {
             document.getElementById("submenu").style.display = "none";
@@ -116,4 +178,3 @@
     </script>
 </body>
 </html>
-
